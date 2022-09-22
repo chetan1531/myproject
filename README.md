@@ -11,11 +11,11 @@ This code is basiclly designed for the elderly person to have thier proper healt
 2) To check her health checkup.By entering last routine check up and giving bloodpressure,Cholestrol level in mg/dl,and Sugar Levels Before meal and After meal in mg/dl.And also remaind the the time span for last checkup.And at last also give tips to be healthy.
 3) Pro Exercise Tips section is designed in the code to follow the daily routine exercise for elderly person basically it has three levels.
 # Here are Screenshot for Working of Program.
-1)
+1)To check BMI Press 1:-
 ![1](https://user-images.githubusercontent.com/67370598/191535331-4b08a6eb-1069-4172-9c4e-f7db52c77fae.png)
-2)
+2)To check health checkup press 2:-
 ![2](https://user-images.githubusercontent.com/67370598/191535785-8882f79c-8a45-42ee-bb83-bba50a845d4e.png)
-3)
+3)Need Excerices Tips press 3:-
 ![3](https://user-images.githubusercontent.com/67370598/191535953-01ed3edd-071b-48d9-8b94-6c05091400fe.png)
-4)
+4)If we enter wrong key Its will Show error.
 ![4](https://user-images.githubusercontent.com/67370598/191535818-13b7321b-dbc6-4cee-ad69-0ff6ecadfa84.png)
