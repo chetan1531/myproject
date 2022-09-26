@@ -2,15 +2,16 @@ package com.company;
 import java.util.Scanner;
 public class SunitaSharmaCode {
     public static void main(String []args) {
-        System.out.println("Hello Sunita Sharma!  \n"+"Welcome to healthline");
-        System.out.println("How I can Help You!!");
-        System.out.println("Press 1 to check BMI(Body Mass Index).");
-        System.out.println("Press 2 For health checkup.");
-        System.out.println("Press 3 For Pro Exercise Tips.");
+        System.out.println("Hello Sunita Sharma!  \n"+"Greetings of the Day to you\n"+"Welcome you to Kratins Healthcare and Solutions");
+        System.out.println("How could I assist You!!");
+        System.out.println("Press 1. For check BMI(Body Mass Index).");
+        System.out.println("Press 2. For health checkup.");
+        System.out.println("Press 3. For Pro Exercise Tips.");
+        System.out.println("Press 4. For Feeling low or Uncomfortable.");
 
         Scanner sc = new Scanner(System.in);
-        int num=sc.nextInt();
-        switch (num) {
+        int key=sc.nextInt();
+        switch (key) {
             case 1:
                 System.out.println("Input weight in kilogram:");
                 double weight = sc.nextDouble();
@@ -29,8 +30,10 @@ public class SunitaSharmaCode {
                             "Top it off.\n" +
                             "Have an occasional treat.\n" +
                             "Exercise.\n");
+
                 } else if (BMI >= 18.5 && BMI <= 25) {
                     System.out.println("Congratuation Sunit your BMI is Normal.");
+
                 } else if (BMI <= 30) {
                     System.out.println("Hey Sunita You are Overweighted.");
                     System.out.println("Here are following tips to make Normal BMI");
@@ -41,6 +44,7 @@ public class SunitaSharmaCode {
                             "Fibre intake.\n" +
                             "Make use of protein.\n" +
                             "Lean meat.");
+
                 } else {
                     System.out.println("Hey Sunita You are Obese.");
                     System.out.println("Here are following tips to make Normal BMI");
@@ -52,6 +56,7 @@ public class SunitaSharmaCode {
                             "Make use of protein.\n" +
                             "Lean meat.");
                 }
+                System.out.println(" Thanks for using Kratins Healthcare and Solutions.");
                 break;
 
             case 2:
@@ -69,9 +74,11 @@ public class SunitaSharmaCode {
 
                 if ((months >= 3) && (chol >= 200 || dbp < 80 || sbp > 150 || bef < 70 || bef > 130 || aft > 180)) {
                     System.out.println("\nMonths :" + months + "\nCholestrol  level in mg/dl : " + chol + "\nDiastolic and Systolic Blood Pressure in mm Hg \nDiastolic :" + dbp + "\nSystolic :" + sbp + "\nSugar Levels Before meal and After meal in mg/dl : \nBefore meal:" + bef + "\nAfter meal:" + aft + "\nYou need to visit the doctor since the readings in the above Performed tests are not within the normal range and your last visit exceeded the time span of 3 Months");
+                    System.out.println(" Thanks for using Kratins Healthcare and Solutions.");
                 }
                 else if (chol >= 200 || dbp < 80 || sbp > 150 || bef < 70 || bef > 130 || aft > 180) {
                     System.out.println("\nCholestrol  level in mg/dl : " + chol + "\nDiastolic and Systolic Blood Pressure in mm Hg \nDiastolic :" + dbp + "\nSystolic :" + dbp + "\nSugar Levels Before meal and After meal in mg/dl : \nBefore meal:" + bef + "\nAfter meal:" + aft + "\nYou need to visit the doctor since the readings in the above Performed tests are not within the normal range");
+                    System.out.println(" Thanks for using Kratins Healthcare and Solutions.");
                 }
                 else if (months >= 3) {
                     System.out.println("\nYou need to visit the doctor since your last visit exceeded the time span of 3 Months \nMonths :" + months);
@@ -80,6 +87,8 @@ public class SunitaSharmaCode {
                 System.out.println("1.Do Yoga and exercises on daily basis");
                 System.out.println("2.Eat healthy");
                 System.out.println("3.Take care of Joints and Bones");
+                System.out.println(" Thanks for using Kratins Healthcare and Solutions.");
+
                 break;
             case 3:
                 System.out.println("Exercise plan for seniors!!");
@@ -96,10 +105,17 @@ public class SunitaSharmaCode {
                 else if(x=='C'){
                     a.FlexibilityRoutine();
                 }
+                else{
+                    System.out.println("Please press Valid Key");
+                }
 
               break;
+            case 4:
+                System.out.println("Urgently please call on the Given Contact number:-**********\nPlease be Relax>>>Our Doctor will visit your home within 10-20 minutes ");
+                System.out.println("\n  Always Remember an Apple a Day Keeps Doctor Away\n  Have a Good Day!\n  Thanks for using Kratins Healthcare and Solutions. ");
+                break;
             default:
-                System.out.println("You have Press Wrong key.");
+                System.out.println("Please Provide valid Option from above");
 
 
         }
@@ -120,7 +136,7 @@ public class SunitaSharmaCode {
                 "**To strengthen the calves**\n" +
                 "1)Seated in a chair, lift your right foot off the floor and slowly rotate your foot 5 times to the right and then 5 times to the left.\n" +
                 "2)Repeat with the left foot");
-          System.out.println("Thanks For coming.");
+          System.out.println(" Thanks for using Kratins Healthcare and Solutions.");
 
     }
     void BalanceRoutine(){
@@ -139,7 +155,7 @@ public class SunitaSharmaCode {
                 "3)Hold for 10 seconds, eventually working up to 30 seconds.\n" +
                 "4)Return to the starting position and repeat with the opposite leg.\n" +
                 "5)Repeat 3 times");
-        System.out.println("Thanks For coming.");
+        System.out.println("Thanks for using Kratins Healthcare and Solutions.");
     }
     void FlexibilityRoutine(){
         System.out.println("**FlexibilityRoutine**");
@@ -152,7 +168,7 @@ public class SunitaSharmaCode {
         "6)Shoulder Stretch.\n"+
         "7)Tricep Stretch.\n"+
         "8)Lunge in a Chair – Advanced.");
-        System.out.println("Thanks For coming.");
+        System.out.println(" Thanks for using Kratins Healthcare and Solutions.");
     }
 
 }
