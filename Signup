@@ -1,0 +1,90 @@
+import React from 'react'
+import { useState } from 'react'
+import { Button, Card, CardBody, CardHeader, Col, Container,Form, FormGroup, Input, Label, Row } from 'reactstrap'
+import Base from '../Components/Base'
+
+const Signup = () => {
+    const [data,setData]=useState({
+        name:'',
+        email:'',
+        password:'',
+        about:''
+    })
+    const [error,setError]=useState({
+        error:{},
+        isError:false
+    })
+
+    const handleChange=(event,property)=>{
+    
+        setData({...data,[property]:event.target.value})
+
+    }
+
+    const RestData=()=>{
+        setData({
+            name:'',
+            email:'',
+            password:'',
+            about:''
+        })
+    }
+
+    const HandleSubmit=(event)=>{
+        event.preventDefault();
+
+        //data validate
+        //call server api for sending data
+
+    }
+  return (
+    <Base>
+      <Container>
+      <Row className='mt-4'>
+        <Col sm={{size:6,offset:3}}>
+        <Card style={{backgroundColor:"#FBE8E4"}}>
+       <CardHeader >
+      <h3> Fill Information to Register !!</h3>
+       </CardHeader>
+       <CardBody>
+        <Form onSubmit={HandleSubmit}>
+      <FormGroup>
+        <Label for='name' >Name</Label>
+        <Input type='text' placeholder='Enter here' id='name' onChange={(e)=>handleChange(e,'name')} value={data.name}/>
+      </FormGroup>
+
+      <FormGroup>
+        <Label for='email' >Email</Label>
+        <Input type='email' placeholder='Enter your email' id='email' onChange={(e)=>handleChange(e,'email')} value={data.email}/>
+      </FormGroup>
+
+     
+
+      <FormGroup>
+        <Label for='password' >Password</Label>
+        <Input type='password' placeholder='Enter password' id='password' onChange={(e)=>handleChange(e,'password')} value={data.password}/>
+      </FormGroup>
+
+      <FormGroup>
+        <Label for='about' >About</Label>
+        <Input type='textarea' placeholder='Enter here' id='about' onChange={(e)=>handleChange(e,'about')} value={data.about} style={{height : "150px"}} />
+      </FormGroup>
+
+      <Container className='text-center'>
+        <Button color="dark"> Register</Button>
+        <Button color="secondary" className='ms-2' onClick={RestData}>Reset</Button>
+      </Container>
+        </Form>
+       </CardBody>
+
+      </Card>
+
+        </Col>
+      </Row>
+     
+      </Container>
+    </Base>
+  )
+}
+
+export default Signup
