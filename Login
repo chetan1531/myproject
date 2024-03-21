@@ -1,9 +1,54 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { toast } from 'react-toastify'
 
 import { Card, CardBody, CardHeader, Col, Container, Row ,Form, FormGroup, Label, Input, Button} from 'reactstrap'
 import Base from '../Components/Base'
+import { loginUser } from '../services/user-services'
 
 const Login = () => {
+
+  const [loginDetails,setLoginDetails]=useState({
+    username:'',
+    password:''
+  })
+
+  const handleChange = (event,field)=>{
+     let actualValue=event.target.value;
+     setLoginDetails({
+      ...loginDetails,
+      [field]:actualValue
+     })
+  }
+
+  const handleReset=()=>{
+    setLoginDetails({
+      username:'',
+      password:''
+    })
+  }
+  
+  const handleSubmit = (event)=>{
+    event.preventDefault();
+    console.log(loginDetails);
+
+    if(loginDetails.username.trim()==='' || loginDetails.password.trim()===''){
+      toast.error("Username or password is missing !!");
+      return;
+    }
+
+    loginUser(loginDetails).then((jwtTokenData)=>{
+      console.log("user login: ");
+      console.log(jwtTokenData);
+      toast.success("Login Success !");
+    }).catch(error=>{
+      console.log(error);
+      if(error.response.status===400 || error.response.status===404){
+        toast.error(error.response.data.message);
+      }else{
+      toast.error("Something went wrong on server !!");
+      }
+    })
+ }
   return (
     <Base>
    
@@ -15,20 +60,26 @@ const Login = () => {
                         <h3>Login Here  !!</h3>
                     </CardHeader>
                     <CardBody> 
-                    <Form>
+                    <Form onSubmit={handleSubmit}>
                     <FormGroup>
                          <Label for='email' >Email</Label>
-                         <Input type="text" id='email' />
+                         <Input type="text" id='email' value={loginDetails.username} 
+                         onChange={(e)=>{
+                          handleChange(e,'username')
+                         }} />
                     </FormGroup>
 
                     <FormGroup>
                          <Label for='password' >Password</Label>
-                         <Input type="password" id='password' />
+                         <Input type="password" id='password' value={loginDetails.password} 
+                         onChange={(e)=>{
+                          handleChange(e,'password')
+                         }} />
                     </FormGroup>
                     <Container className="text-center">
                     
                     <Button color="dark">Login</Button>
-                    <Button className="ms-2" color="secondary">Reset</Button>
+                    <Button className="ms-2" color="secondary" onClick={handleReset}>Reset</Button>
 
 
 
